@@ -13,7 +13,7 @@ class MoviesListViewModel(
     val fetchMovies: FetchMovies = FetchMovies()
 ) : ViewModel() {
 
-    val state = StateReducerFlow(
+    val state: StateReducerFlow<MoviesListState, MoviesListEvent> = StateReducerFlow(
         initialState = MoviesListState.initial,
         reduceState = ::reduceState,
     )
